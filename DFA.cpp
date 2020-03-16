@@ -20,7 +20,7 @@ bool DFA(string test)
 	{
 		cout << "Current State = " << state << endl;
 
-		if (state == "S")
+		if (state == "S") 
 		{
 			if (test[i] == 'A')
 			{
@@ -34,7 +34,28 @@ bool DFA(string test)
 			}
 		}
 
-		if(state=="1")
+		if (state == "1")
+		{
+			if (test[i] == 'T')
+			{
+				cout << test[i] << " will take us to state 2\n" << endl;
+				state = 2;
+			}
+			else
+			{
+				cout << test[i] << " will take us to state 1\n" << endl;
+				state ="1";
+			}
+		}
+
+		if (state == "2")
+		{
+			if (test[i] == 'T')
+			{
+				cout << test[i] << " will take us to state 2\n" << endl;
+				state = "2";
+			}
+		}
 
 
 

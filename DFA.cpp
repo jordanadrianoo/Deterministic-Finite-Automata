@@ -37,19 +37,7 @@ bool DFA(string test)
 void all_patterns(string test)
 {
 	for (int first_letter = 0; first_letter < test.length(); first_letter++)
-	{
-		if (test[first_letter] == 'A')
-		{
-			for (int second_letter = first_letter; second_letter < test.length(); second_letter++)
-			{
-				if (test[second_letter] == 'T')
-				{
-					for (int temp=first_letter; temp <= second_letter; temp++)
-					{
-						cout << test[temp];
-					}
-					cout << endl;
-				}
+	
 
 			}
 		}

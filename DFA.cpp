@@ -1,5 +1,7 @@
 // Jordan Adriano
-
+//3-16-2020
+// This code will find all valid combinations of strings that start with an 'A' and end with 'T'
+// The combinations will consist of {'A','C','G','T'}
 
 # include <iostream>
 # include <string>
@@ -34,18 +36,20 @@ bool DFA(string test)
 
 void all_patterns(string test)
 {
-	
-	for (int i= 0; i<test.length(); i++)
+	for (int first_letter = 0; first_letter < test.length(); first_letter++)
 	{
-		if (state == "S")
+		if (test[first_letter] == 'A')
 		{
-			if (test[i] == 'A')
+			for (int second_letter = first_letter; second_letter < test.length(); second_letter++)
 			{
-				state = "1";
-			}
-			else
-			{
-				stat
+				if (test[second_letter] == 'T')
+				{
+					for (int temp=first_letter; temp <= second_letter; temp++)
+					{
+						cout << test[temp];
+					}
+					cout << endl;
+				}
 
 			}
 		}

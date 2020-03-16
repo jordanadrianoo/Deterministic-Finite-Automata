@@ -13,59 +13,79 @@ bool DFA(string test)
 	bool result = false;
 	string state = "S";
 
-	cout << " String = " << test << endl;
+	cout << "String = " << test << endl;
+	cout << endl;
 
 
 	for (int i= 0; i<test.length(); i++)
 	{
 		cout << "Current State = " << state << endl;
 
+
 		if (state == "S") 
 		{
 			if (test[i] == 'A')
 			{
-				cout << test[i] << " will take us to state 1\n" << endl;
+				cout << test[i] << " will take us to State 1\n" << endl;
 				state = "1";
 			}
 			else
 			{
-				cout << test[i] << " will take us to state 3\n" << endl;
+				cout << test[i] << " will take us to Dead State 3\n" << endl;
 				state = "3";
 			}
 		}
 
-		if (state == "1")
+		else if (state == "1")
 		{
 			if (test[i] == 'T')
 			{
-				cout << test[i] << " will take us to state 2\n" << endl;
-				state = 2;
+				cout << test[i] << " will take us to State 2\n" << endl;
+				state = "2";
 			}
 			else
 			{
-				cout << test[i] << " will take us to state 1\n" << endl;
+				cout << test[i] << " will keep us in State 1\n" << endl;
 				state ="1";
 			}
 		}
 
-		if (state == "2")
+		else if (state == "2")
 		{
 			if (test[i] == 'T')
 			{
-				cout << test[i] << " will take us to state 2\n" << endl;
+				cout << test[i] << " will keep us at State 2\n" << endl;
 				state = "2";
+			}
+			else
+			{
+				cout << test[i] << " will take us to State 1\n" << endl;
+				state = "1";
 			}
 		}
 
-
-
+		else if (state == "3")
+		{
+			cout << test[i] << " will keep us at Dead State 3\n" << endl;
+			state = "3";
+		}
 	}
+
+	if (state == "2")
+	{
+		cout << "This is a valid string, because we are at the final state 2." << endl;
+	}
+	else
+	{
+		cout << "This is not a valid string, because we are in the non final state " << state <<"."<< endl;
+	}
+
 	return true;
 }
 
 void all_patterns(string test)
 {
-	cout << "All Pattern Combinations -" << endl;
+	cout << "\nAll Pattern Combinations -" << endl;
 	for (int first_letter = 0; first_letter < test.length(); first_letter++)
 	{
 		if (test[first_letter] == 'A')
@@ -83,14 +103,17 @@ void all_patterns(string test)
 
 			}
 		}
-	}
+	} 
 	cout << endl;
 }
 
 int main()
 {
+	string word;
 
-	all_patterns("CATTTGCAGGTG");
-	DFA("ACATGAGCGAT");
-	system("pause");
+	cout << "Input a DNA sequence please. (Note: use Uppercase letters only)" << endl;
+	cin >> word;
+	all_patterns(word);
+	DFA(word);
+
 }

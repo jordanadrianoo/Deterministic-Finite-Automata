@@ -13,6 +13,7 @@ bool DFA(string test)
 	bool result = false;
 	string state = "S";
 
+	cout << "DFA Diagram Test - " << endl;
 	cout << "String = " << test << endl;
 	cout << endl;
 
@@ -26,12 +27,14 @@ bool DFA(string test)
 		{
 			if (test[i] == 'A')
 			{
-				cout << test[i] << " will take us to State 1\n" << endl;
+				cout << "Letter = " << test[i] << endl;
+				cout << "S --> State 1\n" << endl;
 				state = "1";
 			}
 			else
 			{
-				cout << test[i] << " will take us to Dead State 3\n" << endl;
+				cout << "Letter = " << test[i] << endl;
+				cout << "S --> Dead State 3\n" << endl;
 				state = "3";
 			}
 		}
@@ -40,12 +43,14 @@ bool DFA(string test)
 		{
 			if (test[i] == 'T')
 			{
-				cout << test[i] << " will take us to State 2\n" << endl;
+				cout << "Letter = " << test[i] << endl;
+				cout << "State 1 --> State 2\n" << endl;
 				state = "2";
 			}
 			else
 			{
-				cout << test[i] << " will keep us in State 1\n" << endl;
+				cout << "Letter = " << test[i] << endl;
+				cout << "State 1 --> State 1\n" << endl;
 				state ="1";
 			}
 		}
@@ -54,19 +59,22 @@ bool DFA(string test)
 		{
 			if (test[i] == 'T')
 			{
-				cout << test[i] << " will keep us at State 2\n" << endl;
+				cout << "Letter = " << test[i] << endl;
+				cout << "State 2 --> State 2\n" << endl;
 				state = "2";
 			}
 			else
 			{
-				cout << test[i] << " will take us to State 1\n" << endl;
+				cout << "Letter = " << test[i] << endl;
+				cout << "State 2 --> State 1\n" << endl;
 				state = "1";
 			}
 		}
 
 		else if (state == "3")
 		{
-			cout << test[i] << " will keep us at Dead State 3\n" << endl;
+			cout << "Letter = " << test[i] << endl;
+			cout << "Dead State 3 --> Dead State 3\n" << endl;
 			state = "3";
 		}
 	}

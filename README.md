@@ -4,4 +4,4 @@ This code will find all valid combinations, within a provided string, that start
 
 ## DFA Diagram 
  
- <img src="Repo Images/DFA Diagram.JPG">
+ <img src="Repo Images/DFA Diagram.JPG" Width=200>

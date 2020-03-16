@@ -5,3 +5,7 @@ This code will find all valid combinations, within a provided string, that start
 ## DFA Diagram 
  
  <img src="Repo Images/DFA Diagram.JPG" Width=800>
+
+## DFA Demo
+
+<img src="Repo Images/DFA Demo.JPG">

@@ -8,4 +8,4 @@ This code will find all valid combinations, within a provided string, that start
 
 ## DFA Demo
 
-<img src="Repo Images/DFA Demo.JPG">
+<img src="Repo Images/DFA Demo.JPG" Width=800>

@@ -14,28 +14,37 @@ bool DFA(string test)
 	string state = "S";
 
 	cout << " String = " << test << endl;
-	cout << " Current State = S\n" << endl;
 
 
 	for (int i= 0; i<test.length(); i++)
 	{
+		cout << "Current State = " << state << endl;
+
 		if (state == "S")
 		{
 			if (test[i] == 'A')
 			{
+				cout << test[i] << " will take us to state 1\n" << endl;
 				state = "1";
 			}
 			else
 			{
+				cout << test[i] << " will take us to state 3\n" << endl;
 				state = "3";
 			}
 		}
+
+		if(state=="1")
+
+
+
 	}
 	return true;
 }
 
 void all_patterns(string test)
 {
+	cout << "All Pattern Combinations -" << endl;
 	for (int first_letter = 0; first_letter < test.length(); first_letter++)
 	{
 		if (test[first_letter] == 'A')
@@ -54,11 +63,13 @@ void all_patterns(string test)
 			}
 		}
 	}
+	cout << endl;
 }
 
 int main()
 {
 
-	DFA("CATTTGCAGGTG");
+	all_patterns("CATTTGCAGGTG");
+	DFA("ACATGAGCGAT");
 	system("pause");
 }
